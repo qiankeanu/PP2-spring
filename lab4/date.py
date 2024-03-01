@@ -28,3 +28,6 @@ date2= datetime(2024, 2, 6, 12, 0, 0)
 diff = date - date2
 diff = diff.total_seconds()
 print(diff)
+
+
+
