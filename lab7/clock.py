@@ -27,7 +27,7 @@ while q:
 
     current_time = datetime.now()
 
-    minute_angel = current_time.minute * 6.5 * -1
+    minute_angel = current_time.minute * 6.5 * -1.5
     second_angel =current_time.second * 6.5 * -1
 
     rotated_minute = pygame.transform.rotate(minute, minute_angel)

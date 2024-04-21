@@ -37,6 +37,9 @@ background = pygame.transform.scale(background, (SCREEN_WIDTH,SCREEN_HEIGHT))
 DISPLAYSURF = pygame.display.set_mode((400,600))
 DISPLAYSURF.fill(WHITE)
 pygame.display.set_caption("Game")
+
+pygame.mixer.music.load('im/ker.mp3')
+pygame.mixer.music.play(-1)
  
 class Enemy(pygame.sprite.Sprite):
       def __init__(self):
@@ -58,7 +61,7 @@ class Coin(pygame.sprite.Sprite):
       def __init__(self):
         super().__init__() 
         self.image = pygame.image.load("im/coin.png")
-        self.image = pygame.transform.scale(self.image, (20,20))
+        self.image = pygame.transform.scale(self.image, (60,60))
         self.rect = self.image.get_rect()
         self.rect.center=(random.randint(40,SCREEN_WIDTH-40),0) 
  
@@ -133,7 +136,7 @@ while running:
     DISPLAYSURF.blit(coins1, (SCREEN_WIDTH / 2,10))
     
     if pygame.sprite.spritecollideany(P1, enemies):
-          pygame.mixer.Sound('im/crash.mp3').play()
+          pygame.mixer.Sound('im/crush.mp3').play()
           time.sleep(0.5)
                     
           DISPLAYSURF.fill(RED)

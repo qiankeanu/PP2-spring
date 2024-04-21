@@ -27,15 +27,15 @@ font = pygame.font.SysFont("Verdana", 60)
 font_small = pygame.font.SysFont("Verdana", 20)
 game_over = font.render("Game Over", True, WHITE)
 
-background = pygame.image.load("im/AnimatedStreet.png")
-
+background = pygame.image.load("im/background.png")
+background = pygame.transform.scale(background, (SCREEN_WIDTH,SCREEN_HEIGHT))
 
 DISPLAYSURF = pygame.display.set_mode((400, 600))
 DISPLAYSURF.fill(WHITE)
 pygame.display.set_caption("Game")
 
 
-pygame.mixer.music.load('im/background.wav')
+pygame.mixer.music.load('im/ker.mp3')
 pygame.mixer.music.play(-1)
 
 
@@ -164,7 +164,7 @@ while True:
 
 
     if pygame.sprite.spritecollideany(P1, enemies):
-        pygame.mixer.Sound('im/crash.wav').play()
+        pygame.mixer.Sound('im/crush.mp3').play()
         time.sleep(0.5)
 
         DISPLAYSURF.fill(BLUE)
